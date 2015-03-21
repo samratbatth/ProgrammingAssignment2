@@ -17,7 +17,6 @@ makeCacheMatrix <- function(x = matrix()) {
 
 
 
-## Write a short comment describing this function
 ## cacheSolve   This function returns an inverse of a matrix.
 ##              The results are cached in the makeCacheMatrix datastructure 
 ##              to further optimize the runtime.
@@ -25,13 +24,12 @@ makeCacheMatrix <- function(x = matrix()) {
 ## output       returns an inverse of the matrix
 ##
 cacheSolve <- function(x, ...) {
-    ## Return a matrix that is the inverse of 'x'
+  
     m <- x$getinv()
     if(!is.null(m)) {
         message("getting cached data")
         return(m)
     }
-    message("here")
     data <- x$get()
     m <- solve(data, ...)
     x$setinv(m)
